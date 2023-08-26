@@ -32,7 +32,7 @@ public class GetAllUserQueryHandler : IRequestHandler<GetAllUserQuery, Paginated
         var pageNumber = request.PageNumber;
         var searchingText = request.SearchingText?.Trim();
 
-        List<User> users = new();
+        var users = _context.Users.ToList();
         var settings = new JsonSerializerSettings
         {
             ReferenceLoopHandling = ReferenceLoopHandling.Ignore
