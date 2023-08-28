@@ -37,7 +37,7 @@ public class GetAllEventQueryHandler:IRequestHandler<GetAllEventsQuery, Paginate
             throw new NotFoundException(nameof(Event), searchingText);
         var paginatedEvents = await PaginatedList<Event>.CreateAsync(events, pageNumber, pageSize);
         var evetResponses = _mapper.Map<List<GetAllEventsQueryResponse>>(paginatedEvents.Items);
-        var result = new PaginatedList<GetAllEventsQueryResponse>(evetResponses, paginatedEvents.TotalCount, paginatedEvents.PageNumber, paginatedEvents.TotalPages);
+        var result = new PaginatedList<GetAllEventsQueryResponse>(evetResponses, paginatedEvents.TotalCount, request.PageNumber, request.PageSize);
         return result;
     }
 }

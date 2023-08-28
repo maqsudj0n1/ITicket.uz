@@ -36,7 +36,7 @@ namespace ITicket.uz.Application.UseCases.Venues.Queries
                     throw new NotFoundException(nameof(Venue), searchingText);
                 var paginatedVenues = await PaginatedList<Venue>.CreateAsync(Venues,pageNumber, pageSize);
                 var venueResponses = _mapper.Map<List<GetAllVenueQueryResponse>>(paginatedVenues.Items);
-                var result = new PaginatedList<GetAllVenueQueryResponse>(venueResponses, paginatedVenues.TotalCount, paginatedVenues.PageNumber, paginatedVenues.TotalPages);
+                var result = new PaginatedList<GetAllVenueQueryResponse>(venueResponses, paginatedVenues.TotalCount, request.PageNumber, request.PageSize);
                 return result;
             }
         }

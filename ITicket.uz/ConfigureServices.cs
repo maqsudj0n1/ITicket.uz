@@ -1,6 +1,4 @@
 ﻿using ITicket.uz.Application.Commons.Interfaces;
-using ITicket.uz.Application.Commons.Jwt.Interfaces;
-using ITicket.uz.Application.Commons.Jwt.Service;
 using ITicket.uz.Common.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.OpenApi.Models;

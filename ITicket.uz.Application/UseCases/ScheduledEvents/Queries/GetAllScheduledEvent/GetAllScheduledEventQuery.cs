@@ -38,7 +38,7 @@ public class GetAllScheduledEventQueryHandler:IRequestHandler<GetAllScheduledEve
 
         var scheduledResponses = _mapper.Map<List<GetAllScheduledEventQueryResponse>>(paginatedScheduledEvents.Items);
 
-        var result = new PaginatedList<GetAllScheduledEventQueryResponse>(scheduledResponses, paginatedScheduledEvents.TotalCount, paginatedScheduledEvents.PageNumber, paginatedScheduledEvents.TotalPages);
+        var result = new PaginatedList<GetAllScheduledEventQueryResponse>(scheduledResponses, paginatedScheduledEvents.TotalCount, request.PageNumber, request.PageSize);
         return result;
 
     }

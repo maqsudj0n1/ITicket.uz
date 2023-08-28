@@ -1,11 +1,7 @@
 ﻿using ITicket.uz.Application.Commons.Models;
 using ITicket.uz.Application.UseCases.Rows.Commands.CreateRow;
 using ITicket.uz.Application.UseCases.Rows.Queries.GetAllRows;
-using ITicket.uz.Application.UseCases.Venues.Commands.CreateVenue;
-using ITicket.uz.Application.UseCases.Venues.Queries;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-
 namespace ITicket.uz.Controllers
 {
     [Route("api/[controller]")]

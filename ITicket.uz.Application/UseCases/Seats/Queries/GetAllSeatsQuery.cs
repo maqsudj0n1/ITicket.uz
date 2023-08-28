@@ -39,7 +39,7 @@ public class GetAllSeatsQueryHandler:IRequestHandler<GetAllSeatsQuery, Paginated
 
         var seatResponses = _mapper.Map<List<GetAllSeatsQueryResponse>>(paginatedSeats.Items);
 
-        var result = new PaginatedList<GetAllSeatsQueryResponse>(seatResponses, paginatedSeats.TotalCount, paginatedSeats.PageNumber, paginatedSeats.TotalPages);
+        var result = new PaginatedList<GetAllSeatsQueryResponse>(seatResponses, paginatedSeats.TotalCount, request.PageNumber, request.PageSize);
         return result;
     }
 }

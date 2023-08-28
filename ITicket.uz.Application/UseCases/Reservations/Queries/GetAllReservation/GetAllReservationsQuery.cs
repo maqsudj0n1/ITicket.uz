@@ -38,7 +38,7 @@ public class GetAllReservationsQueryHandler : IRequestHandler<GetAllReservations
 
         var reservationResponses = _mapper.Map<List<GetAllReservationsQueryResponse>>(paginatedReservations.Items);
 
-        var result = new PaginatedList<GetAllReservationsQueryResponse>(reservationResponses, paginatedReservations.TotalCount, paginatedReservations.PageNumber, paginatedReservations.TotalPages);
+        var result = new PaginatedList<GetAllReservationsQueryResponse>(reservationResponses, paginatedReservations.TotalCount, request.PageNumber, request.PageSize);
         return result;
 
     }

@@ -38,7 +38,7 @@ public class GetAllRowsQueryHandler:IRequestHandler<GetAllRowsQuery, PaginatedLi
 
         var clientResponses = _mapper.Map<List<GetAllRowsQueryResponse>>(paginatedRows.Items);
 
-        var result = new PaginatedList<GetAllRowsQueryResponse>(clientResponses, paginatedRows.TotalCount, paginatedRows.PageNumber, paginatedRows.TotalPages);
+        var result = new PaginatedList<GetAllRowsQueryResponse>(clientResponses, paginatedRows.TotalCount, request.PageNumber, request.PageSize);
         return result;
     }
 }
